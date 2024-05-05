@@ -40,4 +40,24 @@ public abstract class Employee implements Employable {
     public void work() {
         System.out.println("Pracuje");
     }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object e) {
+        
+        if (e == null || getClass() != e.getClass()) {
+            return false;
+        }
+
+        if (this == e) {
+            return true;
+        }
+
+        Employee other = (Employee) e;
+        return id == other.id;
+    }
 }
